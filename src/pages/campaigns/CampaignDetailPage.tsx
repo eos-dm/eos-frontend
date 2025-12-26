@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { campaignsApi, mediaPlansApi } from '@/services/api';
-import type { Campaign, MediaPlan, MediaPlanStatus } from '@/types';
+import type { Campaign, MediaPlan } from '@/types';
 import {
   ArrowLeftIcon,
   PencilIcon,

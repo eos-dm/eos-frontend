@@ -79,7 +79,7 @@ export default function PortalDashboard() {
   const { user } = useAuthStore();
 
   // Fetch portal dashboard data
-  const { data: dashboardData, isLoading } = useQuery({
+  const { isLoading } = useQuery({
     queryKey: ['portal-dashboard'],
     queryFn: portalApi.getDashboard,
   });

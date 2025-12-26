@@ -9,7 +9,6 @@ import {
   PlusIcon,
   MagnifyingGlassIcon,
   PencilIcon,
-  TrashIcon,
   BuildingOfficeIcon,
   EllipsisVerticalIcon,
 } from '@heroicons/react/24/outline';
@@ -211,7 +210,7 @@ function ClientModal({ isOpen, onClose, client, costCenters }: ClientModalProps)
 }
 
 export default function ClientsPage() {
-  const queryClient = useQueryClient();
+  useQueryClient(); // Keep for cache invalidation in mutations
   const [searchTerm, setSearchTerm] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [selectedClient, setSelectedClient] = useState<Client | null>(null);

@@ -12,7 +12,6 @@ import {
   ChevronDownIcon,
   CheckCircleIcon,
   ClockIcon,
-  XCircleIcon,
 } from '@heroicons/react/24/outline';
 
 // Entity type labels

@@ -5,10 +5,9 @@ import { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { mediaPlansApi, subcampaignsApi } from '@/services/api';
-import type { MediaPlan, Subcampaign, ChannelType, BuyType } from '@/types';
+import type { Subcampaign, ChannelType, BuyType } from '@/types';
 import {
   ArrowLeftIcon,
-  PencilIcon,
   TrashIcon,
   PlusIcon,
   CalendarIcon,

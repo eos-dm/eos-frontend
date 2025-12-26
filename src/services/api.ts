@@ -6,7 +6,6 @@ import type {
   User,
   LoginCredentials,
   LoginResponse,
-  AuthTokens,
   Project,
   Campaign,
   MediaPlan,

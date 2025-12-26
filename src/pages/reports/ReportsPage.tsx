@@ -134,7 +134,7 @@ function KPICard({
 }
 
 export default function ReportsPage() {
-  const { user } = useAuthStore();
+  useAuthStore(); // Keep for potential future use
   const [dateRange, setDateRange] = useState({
     start: new Date(new Date().setMonth(new Date().getMonth() - 1)).toISOString().split('T')[0],
     end: new Date().toISOString().split('T')[0],
@@ -166,17 +166,10 @@ export default function ReportsPage() {
   // Calculate additional metrics
   const totalBudget = campaigns.reduce((sum: number, c: Campaign) => sum + c.budget_micros, 0);
   const totalSpent = campaigns.reduce((sum: number, c: Campaign) => sum + c.spent_micros, 0);
-  const avgBudgetPerCampaign = campaigns.length > 0 ? totalBudget / campaigns.length : 0;
 
   // Group campaigns by type
   const campaignsByType = campaigns.reduce((acc: Record<string, number>, c: Campaign) => {
     acc[c.campaign_type] = (acc[c.campaign_type] || 0) + 1;
-    return acc;
-  }, {});
-
-  // Budget by type
-  const budgetByType = campaigns.reduce((acc: Record<string, number>, c: Campaign) => {
-    acc[c.campaign_type] = (acc[c.campaign_type] || 0) + c.budget_micros;
     return acc;
   }, {});
 
