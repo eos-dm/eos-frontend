@@ -101,33 +101,33 @@ apiClient.interceptors.response.use(
 // ================== Authentication API ==================
 export const authApi = {
   login: async (credentials: LoginCredentials): Promise<LoginResponse> => {
-    const response = await apiClient.post('/accounts/login/', credentials);
+    const response = await apiClient.post('/auth/login/', credentials);
     return response.data;
   },
 
   logout: async (refreshToken: string): Promise<void> => {
-    await apiClient.post('/accounts/logout/', { refresh: refreshToken });
+    await apiClient.post('/auth/logout/', { refresh: refreshToken });
   },
 
   refreshToken: async (refreshToken: string): Promise<{ access: string }> => {
-    const response = await apiClient.post('/accounts/token/refresh/', {
+    const response = await apiClient.post('/auth/token/refresh/', {
       refresh: refreshToken,
     });
     return response.data;
   },
 
   getCurrentUser: async (): Promise<User> => {
-    const response = await apiClient.get('/accounts/me/');
+    const response = await apiClient.get('/auth/users/me/');
     return response.data;
   },
 
   updateProfile: async (data: Partial<User>): Promise<User> => {
-    const response = await apiClient.patch('/accounts/me/', data);
+    const response = await apiClient.patch('/auth/users/me/', data);
     return response.data;
   },
 
   changePassword: async (oldPassword: string, newPassword: string): Promise<void> => {
-    await apiClient.post('/accounts/change-password/', {
+    await apiClient.post('/auth/users/change-password/', {
       old_password: oldPassword,
       new_password: newPassword,
     });
