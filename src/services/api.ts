@@ -138,76 +138,76 @@ export const authApi = {
 export const coreApi = {
   // Tenants
   getTenants: async (): Promise<PaginatedResponse<Tenant>> => {
-    const response = await apiClient.get('/core/tenants/');
+    const response = await apiClient.get('/tenants/');
     return response.data;
   },
 
   getCurrentTenant: async (): Promise<Tenant> => {
-    const response = await apiClient.get('/core/tenants/current/');
+    const response = await apiClient.get('/tenants/current/');
     return response.data;
   },
 
   // Agencies
   getAgencies: async (params?: Record<string, any>): Promise<PaginatedResponse<Agency>> => {
-    const response = await apiClient.get('/core/agencies/', { params });
+    const response = await apiClient.get('/agencies/', { params });
     return response.data;
   },
 
   getAgency: async (id: number): Promise<Agency> => {
-    const response = await apiClient.get(`/core/agencies/${id}/`);
+    const response = await apiClient.get(`/agencies/${id}/`);
     return response.data;
   },
 
   // Cost Centers
   getCostCenters: async (params?: Record<string, any>): Promise<PaginatedResponse<CostCenter>> => {
-    const response = await apiClient.get('/core/cost-centers/', { params });
+    const response = await apiClient.get('/cost-centers/', { params });
     return response.data;
   },
 
   getCostCenter: async (id: number): Promise<CostCenter> => {
-    const response = await apiClient.get(`/core/cost-centers/${id}/`);
+    const response = await apiClient.get(`/cost-centers/${id}/`);
     return response.data;
   },
 
   // Clients
   getClients: async (params?: Record<string, any>): Promise<PaginatedResponse<Client>> => {
-    const response = await apiClient.get('/core/clients/', { params });
+    const response = await apiClient.get('/clients/', { params });
     return response.data;
   },
 
   getClient: async (id: number): Promise<Client> => {
-    const response = await apiClient.get(`/core/clients/${id}/`);
+    const response = await apiClient.get(`/clients/${id}/`);
     return response.data;
   },
 
   createClient: async (data: Partial<Client>): Promise<Client> => {
-    const response = await apiClient.post('/core/clients/', data);
+    const response = await apiClient.post('/clients/', data);
     return response.data;
   },
 
   updateClient: async (id: number, data: Partial<Client>): Promise<Client> => {
-    const response = await apiClient.patch(`/core/clients/${id}/`, data);
+    const response = await apiClient.patch(`/clients/${id}/`, data);
     return response.data;
   },
 
   // Advertisers
   getAdvertisers: async (params?: Record<string, any>): Promise<PaginatedResponse<Advertiser>> => {
-    const response = await apiClient.get('/core/advertisers/', { params });
+    const response = await apiClient.get('/advertisers/', { params });
     return response.data;
   },
 
   getAdvertiser: async (id: number): Promise<Advertiser> => {
-    const response = await apiClient.get(`/core/advertisers/${id}/`);
+    const response = await apiClient.get(`/advertisers/${id}/`);
     return response.data;
   },
 
   createAdvertiser: async (data: Partial<Advertiser>): Promise<Advertiser> => {
-    const response = await apiClient.post('/core/advertisers/', data);
+    const response = await apiClient.post('/advertisers/', data);
     return response.data;
   },
 
   updateAdvertiser: async (id: number, data: Partial<Advertiser>): Promise<Advertiser> => {
-    const response = await apiClient.patch(`/core/advertisers/${id}/`, data);
+    const response = await apiClient.patch(`/advertisers/${id}/`, data);
     return response.data;
   },
 };
